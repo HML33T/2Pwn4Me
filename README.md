@@ -15,6 +15,13 @@ How it Works:
 4. We use the remote shell to turn the volume to max with NirCMD (Which we put on the remote computer in step 2)<br>
 5. We now use mpg123 to play the music<br>
 
+How to use:
+----
+1. Make sure there is a file called song.mp3 in the same folder as the run.bat file<br>
+2. Run run.bat<br>
+3. follow on screen instructions<br>
+4. Profit?<br>
+
 How to stop?
 ----
 Currently the tool does not allow to do this remotly, you can however connect to the remote computer yourself with "PsExec \\remotecomputername cmd", wait for it to start and when your on the remote shell use: "TASKKILL /im mp.exe /f"<br>
