@@ -54,7 +54,7 @@ echo There will be 1 pop up you can close this after the music starts.
 echo.
 pause
 echo Changing volume on RC
-psexec \\%rc% C:\rc\nircmd.exe systemvolume 100000
+psexec \\%rc% C:\rc\ncmd.exe systemvolume 100000
 echo starting music
-start psexec \\%rc% C:\rc\mpg123.exe C:\rc\song.mp3
+start psexec \\%rc% C:\rc\mp.exe C:\rc\song.mp3
 pause
