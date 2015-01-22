@@ -58,8 +58,10 @@ echo There will be some delay, please wait patiently.
 echo There will be 1 pop up you can close this after the music starts.
 echo.
 pause
-echo Changing volume on RC
-psexec \\%rc% C:\rc\ncmd.exe systemvolume 100000
-echo starting music
-start psexec \\%rc% C:\rc\mp.exe C:\rc\song.mp3
+echo Unmuting volume on RC
+psexec \\%rc% C:\rc\ncmd.exe mutesysvolume 0
+echo Setting volume on RC
+psexec \\%rc% C:\rc\ncmd.exe setsysvolume 65535
+echo Starting music... This will stay here until it's finished!
+psexec \\%rc% C:\rc\mp.exe C:\rc\song.mp3
 pause
