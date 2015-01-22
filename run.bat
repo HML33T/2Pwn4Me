@@ -36,16 +36,21 @@ C:
 echo Copying required files to RC...
 echo Stage 1 of 3
 copy nircmd.exe X:\rc\ncmd.exe  >nul 2>&1
+if NOT %errorlevel% == 0 echo This step failed
 echo Stage 2 of 3 (1/3)
 copy mpg123.exe X:\rc\mp.exe >nul 2>&1
+if NOT %errorlevel% == 0 echo This step failed
 echo Stage 2 of 3 (2/3)
-copy libmpg.dll X:\rc\libmpg123-0.dll >nul 2>&1
+copy *.dll X:\rc\*.dll >nul 2>&1
+if NOT %errorlevel% == 0 echo This step failed
 cd plugins
 echo Stage 2 of 3 (3/3)
 copy *.* X:\rc\plugins\*.* >nul 2>&1
+if NOT %errorlevel% == 0 echo This step failed
 cd..
 echo Stage 3 of 3
 copy song.mp3 X:\rc\song.mp3 >nul 2>&1
+if NOT %errorlevel% == 0 echo This step failed
 echo Complete!
 echo.
 echo Press any key to start the music
