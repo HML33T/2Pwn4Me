@@ -54,7 +54,9 @@ if %errorlevel% == 0 (echo Copy succesful) else (echo Failed to copy file!)
 echo Complete! 
 echo.
 echo Press any key to start the music
-echo There will be some delay, please wait patiently.
+echo There will be a lot of delay, please wait patiently.
+echo This is due to the slow Remote Shell we're currently using.
+echo We hope to speed up this process in the future!
 echo.
 pause
 echo Unmuting volume on RC
