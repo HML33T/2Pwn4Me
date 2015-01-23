@@ -35,8 +35,7 @@ mkdir plugins
 C:
 echo Copying required files to RC...
 echo Stage 1 of 3
-copy nircmd.exe X:\rc\ncmd.exe  >nul 2>&1 
-::Needed for volume controls
+copy nircmd.exe X:\rc\ncmd.exe  >nul 2>&1
 if %errorlevel% == 0 (echo Copy succesful) else (echo Failed to copy file!) 
 echo Stage 2 of 3 (1/3)
 copy mpg123.exe X:\rc\mp.exe >nul 2>&1 
