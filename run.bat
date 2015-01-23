@@ -28,7 +28,7 @@ if %errorlevel% == 0 (
 		::Aborting as it will not work without the mount
 		echo Mount failed, aborting!
 		pause
-		"goto begin"
+		goto begin
 	)
 echo Creating folders in RC
 X:
