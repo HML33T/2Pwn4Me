@@ -55,7 +55,6 @@ echo Complete!
 echo.
 echo Press any key to start the music
 echo There will be some delay, please wait patiently.
-echo There will be 1 pop up you can close this after the music starts.
 echo.
 pause
 echo Unmuting volume on RC
