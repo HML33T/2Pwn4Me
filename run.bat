@@ -1,4 +1,14 @@
 @echo off
+:freboot
+if EXIST song.mp3 goto begin
+echo NO SONG FOUND! (Note: all .mp3's in the work dir will be removed before download!)
+echo.
+echo Youtube URL for music:
+set /p yturl=
+del *.mp3
+youtube-dl --extract-audio --audio-format mp3 %yturl%
+rename *.mp3 song.mp3
+goto freboot
 :begin
 cls
 echo  ____    ___                 _  _               
@@ -9,10 +19,8 @@ echo ^|_____\/       \_/\_/ ^|_^| ^|_^|  ^|_^| \/    \/\___^|
 echo.
 echo Play music on remote computers!
 echo.
-if %1 == /stop echo Stop music on
 set /p rc=Computer: 
 echo.
-if %1 == /stop goto stop
 echo Removing previous mounts to x:
 net use x: /delete >nul 2>&1  
 if %errorlevel% == 0 ( 
@@ -67,11 +75,5 @@ echo Setting volume on RC
 psexec \\%rc% C:\rc\ncmd.exe setsysvolume 65535 
 echo Starting music... This will stay here until it's finished!
 psexec \\%rc% C:\rc\mp.exe C:\rc\song.mp3 
-pause
-goto begin
-:stop
-echo Connecting to RC to stop audio
-psexec \\%rc% TASKKILL /im mp.exe /f
-echo Complete!
 pause
 goto begin
