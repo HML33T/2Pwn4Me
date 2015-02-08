@@ -6,6 +6,8 @@ This tool uses the followig programs:
  - PsExec (Microsoft)
  - mpg123
  - nircmd
+ - youtube-dl
+ - ffmpeg
 
 How it Works:
 ----
