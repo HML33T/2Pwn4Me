@@ -44,9 +44,11 @@ cd rc
 mkdir plugins
 C:
 echo Copying required files to RC...
-echo Stage 1 of 3
+echo Stage 1 of 3 (1/2)
 copy nircmd.exe X:\rc\ncmd.exe  >nul 2>&1 
-::Needed for volume controls
+if %errorlevel% == 0 (echo Copy succesful) else (echo Failed to copy file!) 
+echo Stage 1 of 3 (2/2)
+copy files\remote.bat X:\rc\remote.bat
 if %errorlevel% == 0 (echo Copy succesful) else (echo Failed to copy file!) 
 echo Stage 2 of 3 (1/3)
 copy mpg123.exe X:\rc\mp.exe >nul 2>&1 
@@ -69,11 +71,6 @@ echo There will be some delay, please wait patiently.
 echo There will be 1 pop up you can close this after the music starts.
 echo.
 pause
-echo Unmuting volume on RC
-psexec \\%rc% C:\rc\ncmd.exe mutesysvolume 0 
-echo Setting volume on RC
-psexec \\%rc% C:\rc\ncmd.exe setsysvolume 65535 
-echo Starting music... This will stay here until it's finished!
-psexec \\%rc% C:\rc\mp.exe C:\rc\song.mp3 
+psexec \\%rc% C:\rc\remote.bat
 pause
 goto begin
